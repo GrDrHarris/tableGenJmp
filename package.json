@@ -3,12 +3,18 @@
   "displayName": "TableGenJmp",
   "description": "Enable you to jump to def when editing llvm tableGen",
   "version": "0.0.1",
+  "publisher": "GrHarris",
   "engines": {
     "vscode": "^1.89.0"
   },
   "categories": [
-    "Other"
+    "Programming Languages"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GrDrHarris/tableGenJmp.git"
+  },
+  "license": "SEE LICENSE IN LICENSE",
   "activationEvents": ["onLanguage:tableGen"],
   "main": "./out/extension.js",
   "contributes": {
