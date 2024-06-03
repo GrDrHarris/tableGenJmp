@@ -30,7 +30,15 @@ async function openFile(file: string, lineNo: number)
 		}
 	}, 100, lineNo);
 }
-function solve(file: string, target: string, incPath: string[], includePwd: Boolean, vis: Set<string>)
+function isNameChar(c: string): boolean
+{
+	if(!isNaN(Number(c)))
+		return true;
+	if(c.toLowerCase() !== c.toUpperCase())
+		return true;
+	return false;
+}
+function solve(file: string, target: string, incPath: string[], includePwd: Boolean, vis: Set<string>) : boolean
 {
 	if(vis.has(file))
 		return false;
@@ -47,14 +55,14 @@ function solve(file: string, target: string, incPath: string[], includePwd: Bool
 			toBeRead.push(trimed.substring(9, trimed.length-1));
 		else if(trimed.startsWith("def "))
 		{
-			if(target == trimed.substring(4, 4 + target.length))
+			if(target == trimed.substring(4, 4 + target.length) && !isNameChar(trimed.charAt(4 + target.length)))
 			{
 				openFile(file, lineNo);
 				return true;
 			}
 		}else if(trimed.startsWith("class "))
 		{
-			if(target == trimed.substring(6, 6 + target.length))
+			if(target == trimed.substring(6, 6 + target.length) && !isNameChar(trimed.charAt(6 + target.length)))
 			{
 				openFile(file, lineNo);
 				return true;

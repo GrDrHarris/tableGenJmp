@@ -2,7 +2,7 @@
   "name": "tablegenjmp",
   "displayName": "TableGenJmp",
   "description": "Enable you to jump to def when editing llvm tableGen",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "GrHarris",
   "engines": {
     "vscode": "^1.89.0"
